@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_btn_selected">#33969696</color>
+    <color name="md_btn_selected_dark">#40CBCBCB</color>
+    <!--适配Material Design后添加的颜色-->
+    <color name="text_100">#ff000000</color>
+    <color name="text_87">#dd000000</color>
+    <color name="text_80">#cc000000</color>
+    <color name="text_60">#99000000</color>
+    <color name="text_54">#69000000</color>
+
+    <color name="text_100_inverse">#ffffffff</color>
+    <color name="text_87_inverse">#ddffffff</color>
+    <color name="text_80_inverse">#ccffffff</color>
+    <color name="text_60_inverse">#99ffffff</color>
+    <color name="text_54_inverse">#89ffffff</color>
+
+    <color name="divider">#ebeef4</color>
+    <color name="edit_hint">#ff808080</color>
+
+</resources>

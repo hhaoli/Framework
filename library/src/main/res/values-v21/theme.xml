@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppBaseTheme" parent="BaseTheme.Light">
+        <item name="android:navigationBarColor">?attr/theme_color</item>
+        <item name="android:statusBarColor">?attr/theme_status_bar_color</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--<item name="android:windowBackground">?attr/theme_color</item>-->
+    </style>
+</resources>
