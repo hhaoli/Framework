@@ -1,6 +1,6 @@
 package com.lihonghao.framework;
 
-import com.lihonghao.library.GlobalApplication;
+import com.lihonghao.library.base.GlobalApplication;
 
 /**
  * 作者：鸿浩

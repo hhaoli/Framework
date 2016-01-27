@@ -1,4 +1,4 @@
-package com.lihonghao.library;
+package com.lihonghao.library.base;
 
 import android.app.Application;
 
