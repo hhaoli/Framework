@@ -38,4 +38,9 @@
     <style name="LoadingProgressBar">
         android:indeterminateDrawable="@drawable/loading_bar1
     </style>
+
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/popup_enter</item>
+        <item name="android:windowExitAnimation">@anim/popup_exit</item>
+    </style>
 </resources>

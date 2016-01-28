@@ -1,13 +1,16 @@
 package com.lihonghao.library.widgets.wheel;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.lihonghao.library.R;
+import com.lihonghao.library.utils.ScreenUtils;
 import com.lihonghao.library.widgets.wheel.adapter.ArrayWheelAdapter;
 import com.lihonghao.library.widgets.wheel.listener.OnWheelChangedListener;
 import com.lihonghao.library.widgets.wheel.view.WheelView;
@@ -24,8 +27,8 @@ import java.util.Map;
 public class WheelSelect extends PopupWindow implements OnWheelChangedListener {
     private Context context;
     private LayoutInflater inflater;
-    Button okbutton, cancelbutton;
-    TextView textView;
+    Button btnLeft, btnRight;
+    TextView title;
     protected View mRootView;
 
     /**
@@ -163,23 +166,22 @@ public class WheelSelect extends PopupWindow implements OnWheelChangedListener {
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mRootView = inflater.inflate(R.layout.wheel_select, null);
-        inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        firstWheelView = (WheelView) mRootView.findViewById(R.id.id_province);
-//        secondWheelView = (WheelView) mRootView.findViewById(R.id.id_city);
-//        textView = (TextView) mRootView.findViewById(R.id.wheeltitle);
-//        thirdWheelView = (WheelView) mRootView.findViewById(R.id.id_area);
-//        okbutton = (Button) mRootView.findViewById(R.id.okwheelbutton);
-//        cancelbutton = (Button) mRootView.findViewById(R.id.cancelwheelbutton);
-//        mRootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-//                LayoutParams.MATCH_PARENT));
-//        this.setBackgroundDrawable(new ColorDrawable(0x60000000));
-//        this.setContentView(mRootView);
-//        this.setWidth(ScreenUtils.getScreenWidth(context));
-//        this.setHeight((int) (ScreenUtils.getScreenHeight(context) / 2.5));
-//        this.setFocusable(true);
-//        this.setOutsideTouchable(true);
-//        setAnimationStyle(R.style.ActionSheetDialogAnimation);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        firstWheelView = (WheelView) mRootView.findViewById(R.id.wheel_select_province);
+        secondWheelView = (WheelView) mRootView.findViewById(R.id.wheel_select_city);
+        thirdWheelView = (WheelView) mRootView.findViewById(R.id.wheel_select_area);
+        title = (TextView) mRootView.findViewById(R.id.wheel_select_title);
+        btnLeft = (Button) mRootView.findViewById(R.id.wheel_select_btn_left);
+        btnRight = (Button) mRootView.findViewById(R.id.wheel_select_btn_right);
+        mRootView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        this.setBackgroundDrawable(new ColorDrawable(0x60000000));
+        this.setContentView(mRootView);
+        this.setWidth(ScreenUtils.getScreenWidth(context));
+        this.setHeight((int) (ScreenUtils.getScreenHeight(context) / 2.5));
+        this.setFocusable(true);
+        this.setOutsideTouchable(true);
+        setAnimationStyle(R.style.ActionSheetDialogAnimation);
         this.update();
     }
 
@@ -187,7 +189,7 @@ public class WheelSelect extends PopupWindow implements OnWheelChangedListener {
      * 初始化按钮事件
      */
     private void initClick() {
-        okbutton.setOnClickListener(new View.OnClickListener() {
+        btnRight.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -210,7 +212,7 @@ public class WheelSelect extends PopupWindow implements OnWheelChangedListener {
                 dismiss();
             }
         });
-        cancelbutton.setOnClickListener(new View.OnClickListener() {
+        btnLeft.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -271,7 +273,7 @@ public class WheelSelect extends PopupWindow implements OnWheelChangedListener {
      * @param title
      */
     public void setTitleName(String title) {
-        this.textView.setText(title);
+        this.title.setText(title);
     }
 
     /**
